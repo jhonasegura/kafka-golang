@@ -1,13 +1,18 @@
-# golang-with-kafka
+# Golang with Kafka
 
+## Requeriments
 
-# Preparando Kafka
+* Apache Kafka
+* Java
 
-Levantar toda la estructura de Kafka y Zookeeper.
+## Kafka Server
 
-    $ docker-compose up
+   $ docker-compose -f single-kafka.yml up
 
- Con esta intrucción se va a crear el topic fogo-chat con 4 particiones y un factor de replicación de 2.
+## Kafka Producer
 
-    $ docker run --net=host --rm confluentinc/cp-kafka:5.0.0 kafka-topics --create --topic fogo-chat --partitions 4 --replication-factor 2 --if-not-exists --zookeeper localhost:32181
+   $ kafka-console-producer.sh --broker-list localhost:9092 --topic quickstart-events
 
+## Kafka Consumer
+
+   $ kafka-console-consumer.sh --boostrap-server localhost:9092 quickstart-events
