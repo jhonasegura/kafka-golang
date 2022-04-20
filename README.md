@@ -9,6 +9,10 @@
 
    $ docker-compose -f single-kafka.yml up
 
+## Create a Topic to Store Events
+
+   $ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+
 ## Kafka Producer
 
    $ kafka-console-producer.sh --broker-list localhost:9092 --topic quickstart-events
