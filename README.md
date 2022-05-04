@@ -1,5 +1,11 @@
 # Golang with Kafka
 
+## Start Project
+
+   $ go mod tidy
+
+   $ go mod vendor
+
 ## Requeriments
 
 * Apache Kafka
@@ -11,7 +17,7 @@
 
 ## Create a Topic to Store Events
 
-   $ bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
+   $ kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
 
 ## Kafka Producer
 
